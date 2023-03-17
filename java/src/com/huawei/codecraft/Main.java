@@ -21,20 +21,13 @@ public class Main {
     public static ArrayList<Staging> stagings;
     public static ArrayList<Robot> robots;
 
-
     public static int money;
     public static int stagingNum;
-    public static int time;
-
-
-
+    public static int frameID;
 
     public static void main(String[] args) {
         schedule();
     }
-
-
-
 
 
     private static void schedule() {
@@ -42,14 +35,8 @@ public class Main {
         outStream.println("OK");
         outStream.flush();
 
-        int frameID;
         while (inStream.hasNextLine()) {
-            String line = inStream.nextLine();
-            String[] parts = line.split(" ");
-            //获得帧数
-            frameID = Integer.parseInt(parts[0]);
             readUtilOK();
-
             outStream.printf("%d\n", frameID);
             int lineSpeed = 3;
             double angleSpeed = 1.5;
@@ -117,17 +104,17 @@ public class Main {
                 return true;
             }
             // do something;
-            //获取第1行参数，确定时间和初始资金
+            //获取第1行参数，确定时间和资金
             if(i==1){
                 String[] str = line.split(" ");
-                time = Integer.parseInt(str[0]);
+                frameID = Integer.parseInt(str[0]);
                 money = Integer.parseInt(str[1]);
             }
             //获取第2行参数,确定工作台数量
             if(i==2){
                 stagingNum = Integer.parseInt(line);
             }
-            //获取第3-k行参数，创造工作台对象
+            //获取第3-k行参数
             if(i==3){
                 for(int j=0;j<9;j++){
                     String[] str = line.split(" ");
@@ -142,7 +129,7 @@ public class Main {
                 }
                 i+=9;
             }
-            //获取最后四行参数，创造机器人对象
+            //获取最后四行参数
             if(i==11){
                 for(int j=0;j<4;j++){
                     String[] str = line.split(" ");
