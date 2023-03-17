@@ -2,24 +2,22 @@ package com.huawei.entity;
 
 public class Staging {
     private int type;
-    private Double[] coordinate=new Double[2];
+    private Double x;
+    private Double y;
     private int produceTime;
     private int material;
-    private int product;
+    private int ifProduct;
 
     public Staging() {
     }
 
-    public Staging(int type) {
+    public Staging(int type, Double x, Double y, int produceTime, int material, int ifProduct) {
         this.type = type;
-    }
-
-    public Staging(int type, Double[] coordinate, int produceTime, int material, int product) {
-        this.type = type;
-        this.coordinate = coordinate;
+        this.x = x;
+        this.y = y;
         this.produceTime = produceTime;
         this.material = material;
-        this.product = product;
+        this.ifProduct = ifProduct;
     }
 
     /**
@@ -40,18 +38,34 @@ public class Staging {
 
     /**
      * 获取
-     * @return coordinate
+     * @return x
      */
-    public Double[] getCoordinate() {
-        return coordinate;
+    public Double getX() {
+        return x;
     }
 
     /**
      * 设置
-     * @param coordinate
+     * @param x
      */
-    public void setCoordinate(Double[] coordinate) {
-        this.coordinate = coordinate;
+    public void setX(Double x) {
+        this.x = x;
+    }
+
+    /**
+     * 获取
+     * @return y
+     */
+    public Double getY() {
+        return y;
+    }
+
+    /**
+     * 设置
+     * @param y
+     */
+    public void setY(Double y) {
+        this.y = y;
     }
 
     /**
@@ -88,21 +102,21 @@ public class Staging {
 
     /**
      * 获取
-     * @return product
+     * @return ifProduct
      */
-    public int getProduct() {
-        return product;
+    public int getIfProduct() {
+        return ifProduct;
     }
 
     /**
      * 设置
-     * @param product
+     * @param ifProduct
      */
-    public void setProduct(int product) {
-        this.product = product;
+    public void setIfProduct(int ifProduct) {
+        this.ifProduct = ifProduct;
     }
 
     public String toString() {
-        return "staging{type = " + type + ", coordinate = " + coordinate + ", produceTime = " + produceTime + ", material = " + material + ", product = " + product + "}";
+        return "Staging{type = " + type + ", x = " + x + ", y = " + y + ", produceTime = " + produceTime + ", material = " + material + ", ifProduct = " + ifProduct + "}";
     }
 }

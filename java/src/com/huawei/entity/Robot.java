@@ -6,21 +6,27 @@ public class Robot {
     private double fTime;
     private double fCrush;
     private double angleSpeed;
-    private Double[] lineSpeed=new Double[2];
-    private Double[] coordinate=new Double[2];
+    private double xLineSpeed;
+    private double yLineSpeed;
+    private double orientation;
+    private double x;
+    private double y;
 
 
     public Robot() {
     }
 
-    public Robot(int stagingId, int type, double fTime, double fCrush, double angleSpeed, Double[] lineSpeed, Double[] coordinate) {
+    public Robot(int stagingId, int type, double fTime, double fCrush, double angleSpeed, double xLineSpeed, double yLineSpeed, double orientation, double x, double y) {
         this.stagingId = stagingId;
         this.type = type;
         this.fTime = fTime;
         this.fCrush = fCrush;
         this.angleSpeed = angleSpeed;
-        this.lineSpeed = lineSpeed;
-        this.coordinate = coordinate;
+        this.xLineSpeed = xLineSpeed;
+        this.yLineSpeed = yLineSpeed;
+        this.orientation = orientation;
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -105,37 +111,85 @@ public class Robot {
 
     /**
      * 获取
-     * @return lineSpeed
+     * @return xLineSpeed
      */
-    public Double[] getLineSpeed() {
-        return lineSpeed;
+    public double getXLineSpeed() {
+        return xLineSpeed;
     }
 
     /**
      * 设置
-     * @param lineSpeed
+     * @param xLineSpeed
      */
-    public void setLineSpeed(Double[] lineSpeed) {
-        this.lineSpeed = lineSpeed;
+    public void setXLineSpeed(double xLineSpeed) {
+        this.xLineSpeed = xLineSpeed;
     }
 
     /**
      * 获取
-     * @return coordinate
+     * @return yLineSpeed
      */
-    public Double[] getCoordinate() {
-        return coordinate;
+    public double getYLineSpeed() {
+        return yLineSpeed;
     }
 
     /**
      * 设置
-     * @param coordinate
+     * @param yLineSpeed
      */
-    public void setCoordinate(Double[] coordinate) {
-        this.coordinate = coordinate;
+    public void setYLineSpeed(double yLineSpeed) {
+        this.yLineSpeed = yLineSpeed;
+    }
+
+    /**
+     * 获取
+     * @return orientation
+     */
+    public double getOrientation() {
+        return orientation;
+    }
+
+    /**
+     * 设置
+     * @param orientation
+     */
+    public void setOrientation(double orientation) {
+        this.orientation = orientation;
+    }
+
+    /**
+     * 获取
+     * @return x
+     */
+    public double getX() {
+        return x;
+    }
+
+    /**
+     * 设置
+     * @param x
+     */
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    /**
+     * 获取
+     * @return y
+     */
+    public double getY() {
+        return y;
+    }
+
+    /**
+     * 设置
+     * @param y
+     */
+    public void setY(double y) {
+        this.y = y;
     }
 
     public String toString() {
-        return "robot{stagingId = " + stagingId + ", type = " + type + ", fTime = " + fTime + ", fCrush = " + fCrush + ", angleSpeed = " + angleSpeed + ", lineSpeed = " + lineSpeed + ", coordinate = " + coordinate + "}";
+        return "Robot{stagingId = " + stagingId + ", type = " + type + ", fTime = " + fTime + ", fCrush = " + fCrush + ", angleSpeed = " + angleSpeed + ", xLineSpeed = " + xLineSpeed + ", yLineSpeed = " + yLineSpeed + ", orientation = " + orientation + ", x = " + x + ", y = " + y + "}";
     }
 }
