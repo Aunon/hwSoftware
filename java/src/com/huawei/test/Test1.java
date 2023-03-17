@@ -6,15 +6,14 @@ import java.util.ArrayList;
 
 public class Test1 {
     public static void main(String[] args) {
-        String s = "1144 199346 sss";
-        String[] ss = s.split(" ");
+        String s = "11..AB..3";
+        String[] ss = s.split("");
         System.out.println(ss[0]);
         System.out.println(ss[1]);
         System.out.println(ss[2]);
-        int i1=Integer.parseInt(ss[0])+1;
-        int i2=Integer.parseInt(ss[1])-1;
-        System.out.println(i1);
-        System.out.println(i2);
+        System.out.println(ss[3]);
+        System.out.println(ss[4]);
+        System.out.println(ss[5]);
     }
 
     public void test1(){

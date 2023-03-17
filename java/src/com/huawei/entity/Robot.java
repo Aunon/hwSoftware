@@ -1,6 +1,7 @@
 package com.huawei.entity;
 
 public class Robot {
+    private int robotId;
     private int stagingId;
     private int type;
     private double fTime;
@@ -16,7 +17,14 @@ public class Robot {
     public Robot() {
     }
 
-    public Robot(int stagingId, int type, double fTime, double fCrush, double angleSpeed, double xLineSpeed, double yLineSpeed, double orientation, double x, double y) {
+    public Robot(int robotId,double x, double y) {
+        this.robotId = robotId;
+        this.x = x;
+        this.y = y;
+    }
+
+    public Robot(int robotId, int stagingId, int type, double fTime, double fCrush, double angleSpeed, double xLineSpeed, double yLineSpeed, double orientation, double x, double y) {
+        this.robotId = robotId;
         this.stagingId = stagingId;
         this.type = type;
         this.fTime = fTime;
@@ -27,6 +35,22 @@ public class Robot {
         this.orientation = orientation;
         this.x = x;
         this.y = y;
+    }
+
+    /**
+     * 获取
+     * @return robotId
+     */
+    public int getRobotId() {
+        return robotId;
+    }
+
+    /**
+     * 设置
+     * @param robotId
+     */
+    public void setRobotId(int robotId) {
+        this.robotId = robotId;
     }
 
     /**
@@ -190,6 +214,6 @@ public class Robot {
     }
 
     public String toString() {
-        return "Robot{stagingId = " + stagingId + ", type = " + type + ", fTime = " + fTime + ", fCrush = " + fCrush + ", angleSpeed = " + angleSpeed + ", xLineSpeed = " + xLineSpeed + ", yLineSpeed = " + yLineSpeed + ", orientation = " + orientation + ", x = " + x + ", y = " + y + "}";
+        return "Robot{robotId = " + robotId + ", stagingId = " + stagingId + ", type = " + type + ", fTime = " + fTime + ", fCrush = " + fCrush + ", angleSpeed = " + angleSpeed + ", xLineSpeed = " + xLineSpeed + ", yLineSpeed = " + yLineSpeed + ", orientation = " + orientation + ", x = " + x + ", y = " + y + "}";
     }
 }

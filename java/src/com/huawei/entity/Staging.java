@@ -11,6 +11,10 @@ public class Staging {
     public Staging() {
     }
 
+    public Staging( Double x, Double y) {
+        this.x = x;
+        this.y = y;
+    }
     public Staging(int type, Double x, Double y, int produceTime, int material, int ifProduct) {
         this.type = type;
         this.x = x;
